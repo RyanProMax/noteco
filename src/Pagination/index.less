@@ -1,0 +1,42 @@
+.noteco-pagination-number-border {
+  border: 1px solid #999;
+  border-radius: 2px;
+}
+
+.noteco-pagination {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: #606266;
+
+  .pagination-number {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 4px;
+
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      .noteco-pagination-number-border();
+    }
+  }
+
+  .page-turner {
+    cursor: pointer;
+  }
+
+  .is-current-page {
+    .noteco-pagination-number-border();
+  }
+
+  .is-disabled {
+    cursor: not-allowed;
+  }
+}
