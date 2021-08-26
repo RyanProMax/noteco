@@ -1,3 +1,7 @@
+# noteco
+
+文档：https://luckyayan.github.io/noteco/
+
 ## Just component, not UI.
 
 没有 UI 设计，只专注逻辑本身。
