@@ -1,8 +1,17 @@
 ## Divider - 分割线
 
-### 1. 使用示例
+### 1. API
 
-#### 1.1 基础应用 & 虚线
+| 参数        | 说明             | 类型                            | 默认值     |
+| ----------- | ---------------- | ------------------------------- | ---------- |
+| className   | 自定义样式       | string                          | -          |
+| type        | 水平还是垂直     | horizontal &#124; vertical      | horizontal |
+| dashed      | 是否虚线         | boolean                         | false      |
+| orientation | 分割线标题的位置 | left &#124; center &#124; right | left       |
+
+### 2. 使用示例
+
+#### 2.1 基础应用 & 虚线
 
 ```tsx
 import React from 'react';
@@ -25,7 +34,7 @@ export default () => (
 );
 ```
 
-#### 1.2 垂直分割线
+#### 2.2 垂直分割线
 
 ```tsx
 import React from 'react';
@@ -42,7 +51,7 @@ export default () => (
 );
 ```
 
-#### 1.3 设置分割线标题 & 位置
+#### 2.3 设置分割线标题 & 位置
 
 ```tsx
 import React from 'react';
@@ -71,9 +80,9 @@ export default () => (
 );
 ```
 
-### 2. 源码实现
+### 3. 源码实现
 
-#### 2.1 index.tsx
+#### 3.1 index.tsx
 
 ```tsx | pure
 import React from 'react';
@@ -84,7 +93,7 @@ import './index.less';
  * type: 水平还是垂直
  * dashed: 是否虚线
  * children: 传入内容
- * orientation: 分割线内容的位置
+ * orientation: 分割线标题的位置
  */
 
 interface props {
@@ -138,7 +147,7 @@ const Divider = ({
 export default Divider;
 ```
 
-#### 2.2 index.less
+#### 3.2 index.less
 
 ```less
 .noteco-divider {
@@ -150,7 +159,7 @@ export default Divider;
 
   &__is-horizontal {
     border-top-width: 1px;
-    margin: 20px 0;
+    margin: 24px 0;
   }
 
   &__is-vertical {
@@ -209,6 +218,6 @@ export default Divider;
 }
 ```
 
-### 3. 小作业
+### 4. 小作业
 
 那么，由你来尝试扩展其他功能吧，比如：通过 props 控制标题的样式。
