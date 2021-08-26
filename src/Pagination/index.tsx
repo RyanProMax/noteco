@@ -1,31 +1,41 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './index.less';
 
-/**
- *
- * current: 当前页
- * pageSize: 每页展示几条数据
- * total: 数据总数
- * position: 分页器位置（flex 布局），默认居中
- * onChange(current): 当前页改变后的回调，传入新的当前页
- *
- */
-
-interface props {
+export interface PaginationProps {
+  /**
+   * @description 当前页
+   * @default 1
+   */
   current: number;
+  /**
+   * @description 每页展示几条数据
+   * @default 10
+   */
   pageSize: number;
+  /**
+   * @description 数据总数
+   * @default 0
+   */
   total: number;
+  /**
+   * @description 分页器位置（flex 布局）
+   * @default center
+   */
   position: 'left' | 'center' | 'right';
+  /**
+   * @description 当前页改变后的回调，传入新的当前页
+   * @default ()=>{}
+   */
   onChange: Function;
 }
 
-const Pagination = ({
+const Pagination: React.FC<PaginationProps> = ({
   current = 1,
   pageSize = 10,
   total = 0,
   position = 'center',
   onChange = () => {},
-}: props) => {
+}) => {
   /**
    *
    * 逻辑部分

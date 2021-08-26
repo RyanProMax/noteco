@@ -1,29 +1,36 @@
 import React from 'react';
 import './index.less';
 
-/**
- * className: 自定义样式
- * type: 水平还是垂直
- * dashed: 是否虚线
- * children: 传入内容
- * orientation: 分割线内容的位置
- */
-
-interface props {
+export interface DividerProps {
+  /**
+   * @description 自定义样式
+   */
   className: string;
+  /**
+   * @description 水平还是垂直
+   * @default horizontal
+   */
   type: 'horizontal' | 'vertical';
+  /**
+   * @description 是否虚线
+   * @default false
+   */
   dashed: boolean;
   children: Element;
+  /**
+   * @description 分割线内容的位置
+   * @default left
+   */
   orientation: 'left' | 'center' | 'right';
 }
 
-const Divider = ({
+const Divider: React.FC<DividerProps> = ({
   className = '',
   type = 'horizontal',
   dashed = false,
   children,
   orientation = 'left',
-}: props) => {
+}) => {
   // type - className 的对应关系
   const TYPE_TO_CLASS = {
     horizontal: 'noteco-divider__is-horizontal',

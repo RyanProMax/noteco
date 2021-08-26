@@ -1,82 +1,61 @@
-## Pagination - 分页器
+---
+title: Pagination - 分页器
+group:
+  title: Pagination - 分页器
+nav:
+  title: 'Component'
+  path: /component
+---
 
-### 1. API
+<API src='./index.tsx'></API>
 
-| 参数     | 说明                               | 类型                            | 默认值 |
-| -------- | ---------------------------------- | ------------------------------- | ------ |
-| current  | 当前页                             | number                          | 1      |
-| pageSize | 每页条数                           | number                          | 10     |
-| total    | 数据总数                           | number                          | 0      |
-| position | 分页器位置（flex 布局），默认居中  | left &#124; center &#124; right | left   |
-| onChange | 页码改变的回调，参数是改变后的页码 | function(current)               | -      |
+## 使用示例
 
-### 2. 使用示例
+<code src="./demo/01.tsx"></code>
 
-```tsx
-import React, { useState } from 'react';
-import { Pagination, Divider } from 'noteco';
+## 源码实现
 
-export default () => {
-  const [current, setCurrent] = useState(2);
-  const pageSize = 10;
-  const total = 125;
-
-  return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        current: {current}
-        <Divider type="vertical" />
-        pageSize: {pageSize}
-        <Divider type="vertical" />
-        total: {total}
-      </div>
-      <Divider />
-      <Pagination
-        current={current}
-        pageSize={pageSize}
-        total={total}
-        onChange={(_current) => {
-          setCurrent(_current);
-        }}
-      />
-    </>
-  );
-};
-```
-
-### 3. 源码实现
-
-#### 3.1 index.tsx
+### 1. index.tsx
 
 ```tsx | pure
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './index.less';
 
-/**
- *
- * current: 当前页
- * pageSize: 每页展示几条数据
- * total: 数据总数
- * position: 分页器位置（flex 布局），默认居中
- * onChange(current): 当前页改变后的回调，传入新的当前页
- *
- */
-
-interface props {
+export interface PaginationProps {
+  /**
+   * @description 当前页
+   * @default 1
+   */
   current: number;
+  /**
+   * @description 每页展示几条数据
+   * @default 10
+   */
   pageSize: number;
+  /**
+   * @description 数据总数
+   * @default 0
+   */
   total: number;
+  /**
+   * @description 分页器位置（flex 布局）
+   * @default center
+   */
   position: 'left' | 'center' | 'right';
+  /**
+   * @description 当前页改变后的回调，传入新的当前页
+   * @default ()=>{}
+   */
   onChange: Function;
 }
 
-const Pagination = ({
+const Pagination: React.FC<PaginationProps> = ({
   current = 1,
   pageSize = 10,
   total = 0,
   position = 'center',
   onChange = () => {},
-}: props) => {
+}) => {
   /**
    *
    * 逻辑部分
@@ -242,7 +221,7 @@ const Pagination = ({
 export default Pagination;
 ```
 
-#### 3.2 index.less
+### 2. index.less
 
 ```less
 /* 当前页选中 or hover样式 */
@@ -323,10 +302,10 @@ export default Pagination;
 }
 ```
 
-### 4. 小作业
+## 小作业
 
 不难发现，这只是一个最基础的乞丐版组件，整体代码结构、功能点以及兼容性都有挺多可以改进的地方。
 
-比如：【样式】可以通过 classnames 库进行管理；【页数】按钮可以单独抽离成组件；缺少【每页条数】交互...
+比如：【样式】可以通过 classnames 库进行管理；【页数】按钮可以单独抽离成组件；缺少【每页条数】交互等等。
 
-那么，就交给你了~
+那么，如果你感兴趣的话，就交给你了~
