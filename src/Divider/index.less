@@ -1,16 +1,66 @@
 .noteco-divider {
-  background-color: #dbdbdb;
-}
+  border-color: #dbdbdb;
+  border-style: solid;
+  border-width: 0;
+  box-sizing: border-box;
+  display: flex;
 
-.is-horizontal {
-  height: 1px;
-  margin: 20px 0;
-}
+  &__is-horizontal {
+    border-top-width: 1px;
+    margin: 20px 0;
+  }
 
-.is-vertical {
-  display: inline-block;
-  width: 1px;
-  height: 1em;
-  margin: 0 12px;
-  vertical-align: middle;
+  &__is-vertical {
+    display: inline-block;
+    border-left-width: 1px;
+    height: 1em;
+    margin: 0 12px;
+    vertical-align: middle;
+  }
+
+  &__is-dashed {
+    border-style: dashed;
+
+    &::after {
+      border-top-style: dashed !important;
+    }
+  }
+
+  &__has-children {
+    border-top-width: 0;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 100%;
+      top: 50%;
+      border-top: 1px solid #dbdbdb;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+  }
+
+  &__children {
+    position: absolute;
+    white-space: nowrap;
+    padding: 0 12px;
+    background-color: #fff;
+    z-index: 10;
+
+    &--is-left {
+      left: 5%;
+    }
+    &--is-center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &--is-right {
+      right: 5%;
+    }
+  }
 }

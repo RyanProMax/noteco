@@ -4,8 +4,8 @@ const BASE_URL = '/noteco';
 
 export default defineConfig({
   title: 'noteco',
-  favicon: BASE_URL + '/images/favicon.png',
-  logo: BASE_URL + '/images/favicon.png',
+  favicon: BASE_URL + '/images/favicon.svg',
+  logo: BASE_URL + '/images/favicon.svg',
   // 文档的展现模式：doc | site
   mode: 'site',
   // 由于 GitHub Pages 是非域名根路径部署, base 和 publicPath 配置项需改为【仓库名称】

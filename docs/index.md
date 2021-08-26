@@ -1,14 +1,24 @@
 ---
 title: noteco
+
 hero:
   title: noteco
   desc: Just component, not UI
   actions:
     - text: 开始
       link: /component
-# features:
-#   - icon: /images/favicon.png
-#     title: 性能强大
-#     desc: 可以配置 `markdown` 文本
-footer: 这是一个用于学习的组件库，注释说明每一个组件的实现思路。
+
+features:
+  - icon: /images/open-source.svg
+    title: 开源实用
+    desc: 所有组件均开放源码，拷贝即用，帮助开发者零成本上手。
+  - icon: /images/note.svg
+    title: 详细的注释说明
+    desc: 深入组件每一步的实现思路，希望在应用组件的同时，你也能收获到什么。
+  - icon: /images/grow.svg
+    title: 从简单到扩展
+    desc: 倡导简单实用，没有复杂的 UI 设计。更注重组件本身的扩展性，可以支撑不同的应用场景。
+
+footer: <div>Copyright © 2021 by Ayan</div>
+  <div>很高兴认识你</div>
 ---
