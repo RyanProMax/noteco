@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './index.less';
 
 /**
@@ -6,176 +6,186 @@ import './index.less';
  * current: 当前页
  * pageSize: 每页展示几条数据
  * total: 数据总数
- * center: 是否居中（flex 布局），默认居中
+ * position: 分页器位置（flex 布局），默认居中
  * onChange(current): 当前页改变后的回调，传入新的当前页
  *
  */
+
 interface props {
   current: number;
   pageSize: number;
   total: number;
-  center: boolean;
+  position: 'left' | 'center' | 'right';
   onChange: Function;
 }
 
-const Pagination = memo(
-  ({
-    current = 1,
-    pageSize = 10,
-    total = 0,
-    center = true,
-    onChange = () => {},
-  }: props) => {
-    const isInit = useRef(true);
-    const pageNums = total === 0 ? 1 : Math.ceil(total / pageSize);
-    const [page, setPage] = useState(Math.min(current, pageNums));
+const Pagination = ({
+  current = 1,
+  pageSize = 10,
+  total = 0,
+  position = 'center',
+  onChange = () => {},
+}: props) => {
+  /**
+   *
+   * 逻辑部分
+   *
+   */
+  const isInit = useRef(true); // 是否首次渲染
+  const totalPages = total === 0 ? 1 : Math.ceil(total / pageSize); // 页数
+  const [page, setPage] = useState(Math.min(current, totalPages)); // 当前页
 
-    // 监听当前页变更，触发 onChange
-    useEffect(() => {
-      // 首次不触发
-      if (isInit.current) {
-        isInit.current = false;
+  // 监听当前页变更，触发 onChange
+  useEffect(() => {
+    // 首次不触发
+    if (isInit.current) {
+      isInit.current = false;
+      return;
+    }
+    onChange(page);
+  }, [page]);
+
+  // 定义页数数组
+  const pageNumToArray = useMemo(
+    () => new Array(totalPages).fill(0).map((_, idx) => idx + 1),
+    [totalPages],
+  );
+
+  // 计算省略号中间页码范围
+  const pageNumAvailable =
+    totalPages <= 2
+      ? []
+      : pageNumToArray.filter((pageNum) => {
+          // 省略号中间展示页数
+          const RANGE = 3;
+          // 范围左侧边界值
+          let min = Math.max(2, page - ((RANGE - 1) >> 1));
+          min = Math.min(min, Math.max(2, totalPages - RANGE));
+          // 范围右侧边界值
+          const max = Math.min(totalPages - 1, min + RANGE - 1);
+          return pageNum >= min && pageNum <= max;
+        });
+
+  // 点击切换页码前后箭头
+  const clickArrowButton = (direction: 'left' | 'right') => {
+    if (direction === 'left') {
+      if (page === 1) {
         return;
       }
-      onChange(page);
-    }, [page]);
-
-    // 页数
-    const pageNumToArray = useMemo(
-      () => new Array(pageNums).fill(0).map((_, idx) => idx + 1),
-      [pageNums],
-    );
-
-    // 计算省略号中间页码范围
-    const pageNumAvailable =
-      pageNums <= 2
-        ? []
-        : pageNumToArray.filter((pageNum) => {
-            // 省略号中间展示页数
-            const RANGE = 3;
-            // 范围左侧边界值
-            let min = Math.max(2, page - ((RANGE - 1) >> 1));
-            min = Math.min(min, Math.max(2, pageNums - RANGE));
-            // 范围右侧边界值
-            const max = Math.min(pageNums - 1, min + RANGE - 1);
-            return pageNum >= min && pageNum <= max;
-          });
-
-    // 是否当前页
-    const isCurrent = (pageNum: number) => page === pageNum;
-    // 当前页是否首页
-    const isFirstPage = page === 1;
-    // 当前页是否尾页
-    const isLastPage = page === pageNums;
-
-    // 点击切换页码前后箭头
-    const clickPageTurner = (tag: 0 | 1) => {
-      if (tag === 0) {
-        if (page === 1) {
-          return;
-        }
-        setPage((_page) => _page - 1);
-      } else if (tag === 1) {
-        if (page === pageNums) {
-          return;
-        }
-        setPage((_page) => _page + 1);
+      setPage((_page) => _page - 1);
+    }
+    if (direction === 'right') {
+      if (page === totalPages) {
+        return;
       }
-    };
+      setPage((_page) => _page + 1);
+    }
+  };
 
-    // 点击页码
-    const clickPage = (pageNum: number) => {
-      setPage(pageNum);
-    };
+  // 点击页码
+  const clickPage = (pageNum: number) => {
+    setPage(pageNum);
+  };
 
-    return (
+  /**
+   *
+   * 样式部分
+   *
+   */
+
+  // wrapper 样式
+  const notecoPaginationClass = () => {
+    return `noteco-pagination noteco-pagination--${position}`;
+  };
+
+  // 上一页/下一页箭头样式
+  const arrowClass = (direction: 'left' | 'right') => {
+    const _className = ['noteco-pagination__turner'];
+    if (direction === 'left') {
+      page === 1 && _className.push('noteco-pagination__button--disabled');
+    }
+    if (direction === 'right') {
+      page === totalPages &&
+        _className.push('noteco-pagination__button--disabled');
+    }
+    return _className.join(' ');
+  };
+
+  // 页数按钮样式
+  const pageNumberClass = (currentPage: number) => {
+    const _className = ['noteco-pagination__number'];
+    page === currentPage &&
+      _className.push('noteco-pagination__number--selected');
+    return _className.join(' ');
+  };
+
+  // 省略号样式
+  const ellipsisClass = (direction: 'left' | 'right') => {
+    const _className = ['noteco-pagination__ellipsis'];
+    if (direction === 'left') {
+      pageNumAvailable[0] <= 2 && _className.push('noteco-pagination--hide');
+    }
+    if (direction === 'right') {
+      pageNumAvailable[pageNumAvailable.length - 1] >= totalPages - 1 &&
+        _className.push('noteco-pagination--hide');
+    }
+    return _className.join(' ');
+  };
+
+  return (
+    <div className={notecoPaginationClass()}>
+      <div className="noteco-pagination__summary">{`共 ${total} 条`}</div>
       <div
-        className="noteco-pagination"
-        style={{ justifyContent: center ? 'center' : '' }}
+        className={arrowClass('left')}
+        onClick={() => {
+          clickArrowButton('left');
+        }}
       >
-        <div
-          className="pagination-summary"
-          style={{ marginRight: '9px' }}
-        >{`共 ${total} 条`}</div>
-        <div
-          className={`page-turner ${isFirstPage ? 'is-disabled' : ''}`}
-          style={{ marginRight: '11px' }}
-          onClick={() => {
-            clickPageTurner(0);
-          }}
-        >
-          ＜
-        </div>
-        <div
-          className={`pagination-number ${
-            isCurrent(1) ? 'is-current-page' : ''
-          }`}
-          onClick={() => {
-            clickPage(1);
-          }}
-        >
-          1
-        </div>
-        <div
-          style={{
-            margin: '0 4px',
-            display: pageNumAvailable[0] > 2 ? '' : 'none',
-          }}
-        >
-          ┄
-        </div>
-
-        {pageNumAvailable.map((pageNum) => (
-          <div
-            key={pageNum}
-            className={`pagination-number ${
-              isCurrent(pageNum) ? 'is-current-page' : ''
-            }`}
-            onClick={() => {
-              clickPage(pageNum);
-            }}
-          >
-            {pageNum}
-          </div>
-        ))}
-        <div
-          style={{
-            margin: '0 4px',
-            display:
-              pageNumAvailable[pageNumAvailable.length - 1] < pageNums - 1
-                ? ''
-                : 'none',
-          }}
-        >
-          ┄
-        </div>
-        <div
-          className={`pagination-number ${
-            isCurrent(pageNums) ? 'is-current-page' : ''
-          }`}
-          style={{ display: pageNums <= 1 ? 'none' : '' }}
-          onClick={() => {
-            clickPage(pageNums);
-          }}
-        >
-          {pageNums}
-        </div>
-        <div
-          className={`page-turner ${isLastPage ? 'is-disabled' : ''}`}
-          style={{ marginLeft: '11px' }}
-          onClick={() => {
-            clickPageTurner(1);
-          }}
-        >
-          ＞
-        </div>
-        <div
-          className="pagination-summary"
-          style={{ marginLeft: '9px' }}
-        >{`共 ${pageNums} 页`}</div>
+        ＜
       </div>
-    );
-  },
-);
+      <div
+        className={pageNumberClass(1)}
+        onClick={() => {
+          clickPage(1);
+        }}
+      >
+        1
+      </div>
+      <div className={ellipsisClass('left')}>┄</div>
+
+      {pageNumAvailable.map((pageNum) => (
+        <div
+          key={pageNum}
+          className={pageNumberClass(pageNum)}
+          onClick={() => {
+            clickPage(pageNum);
+          }}
+        >
+          {pageNum}
+        </div>
+      ))}
+      <div className={ellipsisClass('right')}>┄</div>
+
+      <div
+        className={pageNumberClass(totalPages)}
+        style={{ display: totalPages <= 1 ? 'none' : '' }}
+        onClick={() => {
+          clickPage(totalPages);
+        }}
+      >
+        {totalPages}
+      </div>
+      <div
+        className={arrowClass('right')}
+        onClick={() => {
+          clickArrowButton('right');
+        }}
+      >
+        ＞
+      </div>
+      <div className="noteco-pagination__summary">{`共 ${totalPages} 页`}</div>
+    </div>
+  );
+};
 
 export default Pagination;

@@ -1,4 +1,5 @@
-.noteco-pagination-number-border {
+/* 当前页选中 or hover样式 */
+.noteco-pagination__number--selected {
   border: 1px solid #999;
   border-radius: 2px;
 }
@@ -10,10 +11,36 @@
   font-size: 14px;
   line-height: 14px;
   color: #606266;
+  user-select: none;
 
-  .pagination-number {
-    width: 20px;
-    height: 20px;
+  &--center {
+    justify-content: flex-start;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  &__summary {
+    &--left {
+      margin-right: 10px;
+    }
+    &--right {
+      margin-left: 10px;
+    }
+  }
+
+  &__number {
+    width: 24px;
+    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,19 +51,26 @@
     cursor: pointer;
 
     &:hover {
-      .noteco-pagination-number-border();
+      .noteco-pagination__number--selected();
     }
   }
 
-  .page-turner {
+  &__turner {
     cursor: pointer;
+    margin: 0 10px;
   }
 
-  .is-current-page {
-    .noteco-pagination-number-border();
+  &__button {
+    &--disabled {
+      cursor: not-allowed;
+    }
   }
 
-  .is-disabled {
-    cursor: not-allowed;
+  &__ellipsis {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 4px;
   }
 }
