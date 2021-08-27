@@ -3,7 +3,7 @@ title: Divider - 分割线
 group:
   title: Divider - 分割线
 nav:
-  title: 'Component'
+  title: Component
   path: /component
 ---
 
@@ -34,6 +34,7 @@ import './index.less';
 export interface DividerProps {
   /**
    * @description 自定义样式
+   * @default -
    */
   className: string;
   /**
@@ -55,7 +56,7 @@ export interface DividerProps {
 }
 
 const Divider: React.FC<DividerProps> = ({
-  className = '',
+  className,
   type = 'horizontal',
   dashed = false,
   children,

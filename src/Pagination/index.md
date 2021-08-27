@@ -3,7 +3,7 @@ title: Pagination - 分页器
 group:
   title: Pagination - 分页器
 nav:
-  title: 'Component'
+  title: Component
   path: /component
 ---
 
@@ -39,12 +39,10 @@ export interface PaginationProps {
   total: number;
   /**
    * @description 分页器位置（flex 布局）
-   * @default center
    */
   position: 'left' | 'center' | 'right';
   /**
    * @description 当前页改变后的回调，传入新的当前页
-   * @default ()=>{}
    */
   onChange: Function;
 }
@@ -54,7 +52,7 @@ const Pagination: React.FC<PaginationProps> = ({
   pageSize = 10,
   total = 0,
   position = 'center',
-  onChange = () => {},
+  onChange = (page: number) => {},
 }) => {
   /**
    *

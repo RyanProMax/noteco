@@ -24,7 +24,6 @@ export interface PaginationProps {
   position: 'left' | 'center' | 'right';
   /**
    * @description 当前页改变后的回调，传入新的当前页
-   * @default ()=>{}
    */
   onChange: Function;
 }
@@ -34,7 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({
   pageSize = 10,
   total = 0,
   position = 'center',
-  onChange = () => {},
+  onChange = (page: number) => {},
 }) => {
   /**
    *
