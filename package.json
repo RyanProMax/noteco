@@ -1,18 +1,8 @@
 {
   "name": "noteco",
-  "version": "0.0.1",
-  "private": false,
-  "scripts": {
-    "start": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d dist",
-    "build": "father-build",
-    "deploy": "npm run docs:build && npm run docs:deploy",
-    "release": "npm run build && npm publish",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
-  },
+  "version": "0.0.4",
+  "description": "React components for study",
+  "author": "Ayan",
   "keywords": [
     "component",
     "frontend",
@@ -29,6 +19,17 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d dist",
+    "build": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "release": "npm run build && npm publish",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -41,7 +42,9 @@
     ]
   },
   "dependencies": {
-    "classnames": "^2.3.1",
+    "classnames": "^2.3.1"
+  },
+  "peerDependencies": {
     "react": "^16.12.0"
   },
   "devDependencies": {
