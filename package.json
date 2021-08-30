@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "noteco",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "private": false,
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -12,6 +12,19 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
+  },
+  "keywords": [
+    "component",
+    "frontend",
+    "react",
+    "react-component",
+    "dumi",
+    "study"
+  ],
+  "homepage": "https://luckyayan.github.io/noteco/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuckyAyan/noteco"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
