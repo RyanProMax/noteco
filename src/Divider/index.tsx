@@ -6,23 +6,23 @@ export interface DividerProps {
    * @description 自定义样式
    * @default -
    */
-  className: string;
+  className?: string;
   /**
    * @description 水平还是垂直
    * @default horizontal
    */
-  type: 'horizontal' | 'vertical';
+  type?: 'horizontal' | 'vertical';
   /**
    * @description 是否虚线
    * @default false
    */
-  dashed: boolean;
-  children: Element;
+  dashed?: boolean;
+  children?: Element;
   /**
    * @description 分割线内容的位置
    * @default left
    */
-  orientation: 'left' | 'center' | 'right';
+  orientation?: 'left' | 'center' | 'right';
 }
 
 const Divider: React.FC<DividerProps> = ({

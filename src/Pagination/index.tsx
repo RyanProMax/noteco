@@ -21,7 +21,7 @@ export interface PaginationProps {
    * @description 分页器位置（flex 布局）
    * @default center
    */
-  position: 'left' | 'center' | 'right';
+  position?: 'left' | 'center' | 'right';
   /**
    * @description 当前页改变后的回调，传入新的当前页
    */
