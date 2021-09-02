@@ -19,7 +19,7 @@ export default defineConfig({
     null, // null 值代表保留约定式生成的导航，只做增量配置
     {
       title: 'Github',
-      path: 'https://github.com/LuckyAyan/noteco',
+      path: 'https://github.com/Ryan-zyy/noteco',
     },
   ],
   exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404

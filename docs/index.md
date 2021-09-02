@@ -19,7 +19,7 @@ features:
     title: 从简单到扩展
     desc: 倡导简单实用，没有复杂的 UI 设计。更注重组件本身的扩展性，可以支撑不同的应用场景
 
-footer: Copyright © 2021 by Ayan<br />Powered by [dumi](https://d.umijs.org)
+footer: Copyright © 2021 by Ryan<br />Powered by [dumi](https://d.umijs.org)
 ---
 
 <h4 style="text-align: center">基于 React + TypeScript 开发</h4>

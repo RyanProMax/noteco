@@ -13,7 +13,7 @@
     Noteco，是一款由 dumi 构建，基于 React + TypeScript 的组件库 🚀。
 </p>
 
-文档：https://luckyayan.github.io/noteco/
+文档：https://ryan-zyy.github.io/noteco/
 
 ## 🌼 Just component, not UI.
 

@@ -20,6 +20,6 @@ noteco，**更希望展现的是一种实现思路**，而非 UI 设计，在 UI
 
 ## About Me
 
-- [Github](https://github.com/LuckyAyan)
+- [Github](https://github.com/Ryan-zyy)
 - [个人博客](https://zhangyuyan.cn/)
-- [语雀](https://www.yuque.com/ayanko)
+- [语雀](https://www.yuque.com/ryan.zhang)

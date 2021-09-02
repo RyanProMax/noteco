@@ -1,8 +1,8 @@
 {
   "name": "noteco",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React components for study",
-  "author": "Ayan",
+  "author": "Ryan",
   "license": "MIT",
   "keywords": [
     "component",
@@ -12,10 +12,10 @@
     "dumi",
     "study"
   ],
-  "homepage": "https://luckyayan.github.io/noteco/",
+  "homepage": "https://ryan-zyy.github.io/noteco/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LuckyAyan/noteco"
+    "url": "https://github.com/Ryan-zyy/noteco"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
