@@ -59,6 +59,7 @@ const Component = () => <FPS />;
 ### 功能组件
 
 - [x] FPS - 帧率检测
+- [x] Watermark - 水印
 - [ ] DragList - 拖拽列表
 - [ ] VirtualList - 虚拟列表
 - [ ] Transition - 过渡动画组件
