@@ -15,7 +15,9 @@
   "homepage": "https://ryan-zyy.github.io/noteco/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ryan-zyy/noteco"
+    "url": "https://github.com/Ryan-zyy/noteco.git",
+    "branch": "main",
+    "platform": "github"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
