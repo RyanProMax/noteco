@@ -1,7 +1,9 @@
 ---
 title: Pagination - 分页器
 group:
-  title: Pagination - 分页器
+  title: UI 组件
+  path: /ui
+  order: 1
 nav:
   title: Component
   path: /component

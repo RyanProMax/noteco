@@ -1,7 +1,8 @@
 ---
 title: DragList - 拖拽容器
 group:
-  title: DragList - 拖拽容器
+  title: 功能组件
+  path: /feat
 nav:
   title: Component
   path: /component

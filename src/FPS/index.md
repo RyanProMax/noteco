@@ -1,7 +1,8 @@
 ---
 title: FPS - 帧率检测
 group:
-  title: FPS - 帧率检测
+  title: 功能组件
+  path: /feat
 nav:
   title: Component
   path: /component

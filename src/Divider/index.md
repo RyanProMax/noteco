@@ -1,7 +1,9 @@
 ---
 title: Divider - 分割线
 group:
-  title: Divider - 分割线
+  title: UI 组件
+  path: /ui
+  order: 1
 nav:
   title: Component
   path: /component
