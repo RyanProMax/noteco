@@ -1,5 +1,5 @@
 ---
-title: DragList - 拖拽容器
+title: DragList - 拖拽列表
 group:
   title: 功能组件
   path: /feat
@@ -77,7 +77,7 @@ const DragList: React.FC<DragProps> = ({
 
   // 加工属性
   const addProps = useCallback(
-    (index) => ({
+    (el, index) => ({
       draggable: true,
       onDragStart: function (event: DragEvent) {
         currentDragIndex.current = index;
@@ -96,9 +96,9 @@ const DragList: React.FC<DragProps> = ({
         offsetAxis.current = [clientX - left, clientY - top];
 
         // 获取虚拟 DOM 元素 -> 拷贝副本覆盖原来
-        const _vDOM = children[index];
+        const _vDOM = el;
 
-        if (isValidElement(_vDOM)) {
+        if (isValidElement(_vDOM as ReactElement)) {
           const _fakeVDOM = cloneElement(_vDOM, {
             style: {
               ..._vDOM.props.style,
@@ -200,7 +200,7 @@ const DragList: React.FC<DragProps> = ({
       // 非可用元素直接返回
       if (!isValidElement(el)) return el;
       // 可用元素加工后返回
-      return cloneElement(el, addProps(idx));
+      return cloneElement(el, addProps(el, idx));
     });
   };
 
