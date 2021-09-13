@@ -9,6 +9,8 @@ nav:
   path: /component
 ---
 
+# Pagination - 分页器
+
 <API src='./index.tsx'></API>
 
 ## 使用示例

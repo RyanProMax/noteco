@@ -8,6 +8,12 @@ nav:
   path: /component
 ---
 
+# FPS - 帧率检测
+
+计算 & 展示当前页面的 FPS。
+
+- FPS：Frame Per Second
+
 <API src='./index.tsx'></API>
 
 ## 使用示例

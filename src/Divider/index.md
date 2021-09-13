@@ -9,6 +9,8 @@ nav:
   path: /component
 ---
 
+# Divider - 分割线
+
 <API src='./index.tsx'></API>
 
 ## 使用示例

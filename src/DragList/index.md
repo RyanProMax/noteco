@@ -8,6 +8,10 @@ nav:
   path: /component
 ---
 
+# DragList - 拖拽列表
+
+简单实现的一个拖拽列表组件。
+
 <API src='./index.tsx'></API>
 
 ## 使用示例

@@ -8,6 +8,12 @@ nav:
   path: /component
 ---
 
+# Watermark - 水印
+
+为图片添加文字水印，非图层覆盖。
+
+由于这种方案会对原图进行编码转换，因此针对大体积图片可能效率较低。
+
 <API src='./index.tsx'></API>
 
 ## 使用示例
