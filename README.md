@@ -53,6 +53,7 @@ const Component = () => <FPS />;
 
 ### UI 组件
 
+- [x] Avatar - 选择头像
 - [x] Divider - 分割线
 - [x] Input - 输入框
 - [x] Pagination - 分页器
