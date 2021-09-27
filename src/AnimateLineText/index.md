@@ -1,7 +1,7 @@
 ---
-title: AnimateLineText - 线性动画文字
+title: AnimateLineText
 group:
-  title: AnimateLineText - 线性动画文字
+  title: AnimateLineText
 nav:
   title: Animate Component
   path: /animate-component

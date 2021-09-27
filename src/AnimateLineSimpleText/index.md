@@ -1,7 +1,7 @@
 ---
-title: AnimateLineSimpleText - 线性动画文字
+title: AnimateLineSimpleText
 group:
-  title: AnimateLineSimpleText - 线性动画文字
+  title: AnimateLineSimpleText
 nav:
   title: Animate Component
   path: /animate-component
@@ -13,7 +13,7 @@ nav:
 
 ## 使用示例
 
-<code src="./demo/01.tsx"></code>
+<code src="./demo/index.tsx"></code>
 
 ## 源码实现
 

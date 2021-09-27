@@ -24,5 +24,5 @@ export function insertCssRule(rule: string) {
   ) {
     return;
   }
-  _styleSheet.insertRule(rule);
+  _styleSheet.insertRule(rule, cssRules.length);
 }
