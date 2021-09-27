@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimateLineText } from 'noteco';
 
 export default () => (
-  <div style={{ background: '#000', width: 800, height: 600 }}>
+  <div style={{ background: '#000' }}>
     <AnimateLineText
       width="100%"
       height="100%"
