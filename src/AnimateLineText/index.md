@@ -46,7 +46,7 @@ const AnimateLineText: React.FC<Props> = ({
   strokeWidth = '3px',
   ...rest
 }) => {
-  const random = Date.now();
+  const random = Math.round(Math.random() * 10000);
 
   return (
     <svg className="noteco-animation-line-text" {...rest}>
