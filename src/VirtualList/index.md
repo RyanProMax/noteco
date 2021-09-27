@@ -1,11 +1,10 @@
 ---
 title: VirtualList - 虚拟列表
 group:
-  title: 功能组件
-  path: /feat
+  title: VirtualList - 虚拟列表
 nav:
-  title: Component
-  path: /component
+  title: Feat Component
+  path: /feat-component
 ---
 
 # VirtualList - 虚拟列表

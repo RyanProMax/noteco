@@ -6,7 +6,7 @@ hero:
   desc: Just component, not UI
   actions:
     - text: 开始
-      link: /component
+      link: /guide
 
 features:
   - icon: /noteco/images/open-source.svg

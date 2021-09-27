@@ -1,12 +1,10 @@
 ---
 title: Avatar - 选择头像
 group:
-  title: UI 组件
-  path: /ui
-  order: 1
+  title: Avatar - 选择头像
 nav:
-  title: Component
-  path: /component
+  title: UI Component
+  path: /ui-component
 ---
 
 # Avatar - 选择头像

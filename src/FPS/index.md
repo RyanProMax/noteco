@@ -1,11 +1,10 @@
 ---
 title: FPS - 帧率检测
 group:
-  title: 功能组件
-  path: /feat
+  title: FPS - 帧率检测
 nav:
-  title: Component
-  path: /component
+  title: Feat Component
+  path: /feat-component
 ---
 
 # FPS - 帧率检测
@@ -54,7 +53,7 @@ export interface FPSProps {
 const FPS: React.FC<FPSProps> = ({
   render = true,
   className,
-  onChange = (fps: number) => {},
+  onChange = (fps: number) => {}
 }) => {
   // 初始化表示
   const isInit = useRef(true);

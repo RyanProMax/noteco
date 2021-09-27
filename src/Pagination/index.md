@@ -1,12 +1,10 @@
 ---
 title: Pagination - 分页器
 group:
-  title: UI 组件
-  path: /ui
-  order: 1
+  title: Pagination - 分页器
 nav:
-  title: Component
-  path: /component
+  title: UI Component
+  path: /ui-component
 ---
 
 # Pagination - 分页器
@@ -56,7 +54,7 @@ const Pagination: React.FC<PaginationProps> = ({
   pageSize = 10,
   total = 0,
   position = 'center',
-  onChange = (page: number) => {},
+  onChange = (page: number) => {}
 }) => {
   /**
    *
@@ -80,7 +78,7 @@ const Pagination: React.FC<PaginationProps> = ({
   // 定义页数数组
   const pageNumToArray = useMemo(
     () => new Array(totalPages).fill(0).map((_, idx) => idx + 1),
-    [totalPages],
+    [totalPages]
   );
 
   // 计算省略号中间页码范围

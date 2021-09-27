@@ -1,12 +1,10 @@
 ---
 title: Divider - 分割线
 group:
-  title: UI 组件
-  path: /ui
-  order: 1
+  title: Divider - 分割线
 nav:
-  title: Component
-  path: /component
+  title: UI Component
+  path: /ui-component
 ---
 
 # Divider - 分割线
@@ -64,18 +62,18 @@ const Divider: React.FC<DividerProps> = ({
   type = 'horizontal',
   dashed = false,
   children,
-  orientation = 'left',
+  orientation = 'left'
 }) => {
   // type - className 的对应关系
   const TYPE_TO_CLASS = {
     horizontal: 'noteco-divider__is-horizontal',
-    vertical: 'noteco-divider__is-vertical',
+    vertical: 'noteco-divider__is-vertical'
   };
   // orientation - className 的对应关系
   const ORIENTATION_TO_CLASS = {
     left: 'noteco-divider__children--is-left',
     center: 'noteco-divider__children--is-center',
-    right: 'noteco-divider__children--is-right',
+    right: 'noteco-divider__children--is-right'
   };
 
   // 收集容器样式 -> 数组

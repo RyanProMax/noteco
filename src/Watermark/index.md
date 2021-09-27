@@ -1,11 +1,10 @@
 ---
 title: Watermark - 水印
 group:
-  title: 功能组件
-  path: /feat
+  title: Watermark - 水印
 nav:
-  title: Component
-  path: /component
+  title: Feat Component
+  path: /feat-component
 ---
 
 # Watermark - 水印
@@ -87,7 +86,7 @@ const Watermark: React.FC<WatermarkProps> = ({
   content = '@Watermark',
   cb = (base64Url: string) => {},
   right = 10,
-  bottom = 10,
+  bottom = 10
 }) => {
   if (!url) return null;
 

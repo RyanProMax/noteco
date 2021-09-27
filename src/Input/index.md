@@ -1,12 +1,10 @@
 ---
 title: Input - 输入框
 group:
-  title: UI 组件
-  path: /ui
-  order: 1
+  title: Input - 输入框
 nav:
-  title: Component
-  path: /component
+  title: UI Component
+  path: /ui-component
 ---
 
 # Input - 输入框
@@ -97,7 +95,7 @@ const Input: React.FC<InputProps> = ({
     <div
       className={classnames('notoco-input__wrapper', className, {
         'notoco-input__counter': maxLength,
-        'notoco-input__counter--limit': val.length >= maxLength,
+        'notoco-input__counter--limit': val.length >= maxLength
       })}
       data-counter={dataCounter}
     >

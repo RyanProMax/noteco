@@ -1,11 +1,10 @@
 ---
 title: DragList - 拖拽列表
 group:
-  title: 功能组件
-  path: /feat
+  title: DragList - 拖拽列表
 nav:
-  title: Component
-  path: /component
+  title: Feat Component
+  path: /feat-component
 ---
 
 # DragList - 拖拽列表
@@ -45,7 +44,7 @@ import React, {
   useCallback,
   useEffect,
   useRef,
-  useState,
+  useState
 } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -64,7 +63,7 @@ export interface DragProps {
 const DragList: React.FC<DragProps> = ({
   children,
   onChange = (newVal: ReactElement[], fromIndex: number, toIndex: number) => {},
-  onDragEnd = () => {},
+  onDragEnd = () => {}
 }) => {
   // 传入非数组直接返回
   if (!Array.isArray(children)) return children;
@@ -114,8 +113,8 @@ const DragList: React.FC<DragProps> = ({
               zIndex: 999,
               pointerEvents: 'none',
               transform: `translate3d(${~~left}px, ${~~top}px, 0)`,
-              cursor: 'pointer',
-            },
+              cursor: 'pointer'
+            }
           });
           fakeVDOM.current = _fakeVDOM;
           setFakeVDOMAxis([~~left, ~~top]);
@@ -174,9 +173,9 @@ const DragList: React.FC<DragProps> = ({
         if (typeof onDragEnd === 'function') {
           onDragEnd();
         }
-      },
+      }
     }),
-    [],
+    []
   );
 
   useEffect(() => {
@@ -213,8 +212,8 @@ const DragList: React.FC<DragProps> = ({
       const _fakeVDOM = cloneElement(fakeVDOM.current, {
         style: {
           ...fakeVDOM.current.props.style,
-          transform: `translate3d(${fakeVDOMAxis[0]}px, ${fakeVDOMAxis[1]}px, 0)`,
-        },
+          transform: `translate3d(${fakeVDOMAxis[0]}px, ${fakeVDOMAxis[1]}px, 0)`
+        }
       });
       fakeVDOM.current = _fakeVDOM;
       return createPortal(_fakeVDOM, document.body);
