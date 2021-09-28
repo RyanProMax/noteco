@@ -1,5 +1,6 @@
 export { default as AnimateLineSimpleText } from './AnimateLineSimpleText';
 export { default as AnimateLineText } from './AnimateLineText';
+export { default as BreakText } from './BreakText';
 
 export { default as Avatar } from './Avatar';
 export { default as Divider } from './Divider';

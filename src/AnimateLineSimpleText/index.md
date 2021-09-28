@@ -9,6 +9,8 @@ nav:
 
 # AnimateLineSimpleText - 线性动画文字
 
+具体实现参照：https://csscoco.com/inspiration/#/./svg/svg-line-text
+
 <API src='./index.tsx'></API>
 
 ## 使用示例
