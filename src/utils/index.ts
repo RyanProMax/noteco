@@ -1,3 +1,7 @@
+declare interface NewCSSRule extends CSSRule {
+  selectorText: string;
+}
+
 export function insertCssRule(rule: string) {
   const { styleSheets } = document;
   console.log('styleSheets: ', styleSheets);
@@ -7,7 +11,7 @@ export function insertCssRule(rule: string) {
     if (
       styleSheet.cssRules &&
       Array.from(styleSheet.cssRules).some((item) => {
-        const selectorText = item.selectorText;
+        const selectorText = (item as NewCSSRule).selectorText;
         return selectorText && selectorText.indexOf('.noteco') > -1;
       })
     ) {
