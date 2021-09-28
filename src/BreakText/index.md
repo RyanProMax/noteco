@@ -22,6 +22,7 @@ nav:
 ### index.tsx
 
 ```tsx | pure
+import classnames from 'classnames';
 import React from 'react';
 import './index.less';
 
@@ -35,6 +36,11 @@ export interface Props {
    */
   scale: number;
   /**
+   * @description 容器样式
+   * @default -
+   */
+  className: string;
+  /**
    * @description 文字样式
    * @default -
    */
@@ -43,12 +49,13 @@ export interface Props {
 
 const BreakText: React.FC<Props> = ({
   text = 'noteco',
+  className,
   scale = 2.4,
   textStyle,
   ...rest
 }) => {
   return (
-    <div className="noteco-break-text" {...rest}>
+    <div className={classnames('noteco-break-text', className)} {...rest}>
       <div
         className="noteco-break-text__content"
         data-word={text}
