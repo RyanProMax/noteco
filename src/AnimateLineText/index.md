@@ -24,10 +24,13 @@ nav:
 ### index.tsx
 
 ```tsx | pure
-import React from 'react';
+import React, { useRef } from 'react';
 import './index.less';
-
 export interface Props {
+  /**
+   * @description 用于定义原生 symbol 标签的 id，不设置则内部采用随机 ID
+   */
+  id: string;
   /**
    * @description 传入文字
    */
@@ -44,15 +47,16 @@ export interface Props {
 }
 
 const AnimateLineText: React.FC<Props> = ({
+  id,
   content,
   strokeWidth = '3px',
   ...rest
 }) => {
-  const random = Math.round(Math.random() * 10000);
+  const _id = useRef(`noteco-text__${Math.round(Math.random() * 10000)}`);
 
   return (
     <svg className="noteco-animation-line-text" {...rest}>
-      <symbol id={`noteco-text__${random}`}>
+      <symbol id={id || _id.current}>
         {content.map(({ x, y, style, value }, idx) => (
           <text
             key={idx}
@@ -70,7 +74,7 @@ const AnimateLineText: React.FC<Props> = ({
         {new Array(5).fill(0).map((_, idx) => (
           <use
             key={idx}
-            xlinkHref={`#noteco-text__${random}`}
+            xlinkHref={`#${id || _id.current}`}
             className="noteco-animation-line-text__text-copy"
             style={{ strokeWidth: strokeWidth }}
           ></use>
