@@ -65,3 +65,11 @@ const Component = () => <FPS />;
 - [x] DragList - 拖拽列表
 - [x] VirtualList - 虚拟列表
 - [ ] Transition - 过渡动画组件
+
+### 动画组件
+
+这部分内容的实现主要参照大佬的作品：https://csscoco.com/inspiration/ ，加以封装方便复用。
+
+- [x] AnimateLineSimpleText - 线性动画文字
+- [x] AnimateLineText - 线性动画文字
+- [x] BreakText - 故障文字
