@@ -77,4 +77,5 @@ const Component = () => <FPS />;
 - [x] AnimateLineText - 线性动画文字
 - [x] BreakText - 故障文字
 - [x] NumberCount3D - 3D 数字
-- [ ] LineAnimation - 线条动画
+- [x] OutlineAnimation - 线条动画
+- [ ] StringRain - 字符雨
