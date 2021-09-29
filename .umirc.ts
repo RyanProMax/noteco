@@ -18,9 +18,13 @@ export default defineConfig({
   navs: [
     null, // null 值代表保留约定式生成的导航，只做增量配置
     {
-      title: 'Github',
-      path: 'https://github.com/Ryan-zyy/noteco',
+      title: 'Interest',
+      path: 'https://ryan-zyy.github.io/interest/'
     },
+    {
+      title: 'Github',
+      path: 'https://github.com/Ryan-zyy/noteco/'
+    }
   ],
-  exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
+  exportStatic: {} // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
 });

@@ -9,11 +9,14 @@
     </a>
   <br>
 </p>
+
 <p align="center">
-    Noteco，是一款由 dumi 构建，基于 React + TypeScript 的组件库 🚀。
+    Noteco，是一款由 dumi 构建，基于 React + TypeScript 的组件库 🚀
 </p>
 
-文档：https://ryan-zyy.github.io/noteco/
+<p align="center">
+    文档：https://ryan-zyy.github.io/noteco/
+</p>
 
 ## 🌼 Just component, not UI.
 
