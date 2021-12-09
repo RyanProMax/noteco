@@ -19,11 +19,11 @@ export default defineConfig({
     null, // null 值代表保留约定式生成的导航，只做增量配置
     {
       title: 'Interest',
-      path: 'https://ryan-zyy.github.io/interest/'
+      path: 'https://RyanProMax.github.io/interest/'
     },
     {
       title: 'Github',
-      path: 'https://github.com/Ryan-zyy/noteco/'
+      path: 'https://github.com/RyanProMax/noteco/'
     }
   ],
   exportStatic: {} // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404

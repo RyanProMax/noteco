@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-    文档：https://ryan-zyy.github.io/noteco/
+    文档：https://RyanProMax.github.io/noteco/
 </p>
 
 ## 🌼 Just component, not UI.

@@ -32,8 +32,8 @@ nav:
 
 ## About Me
 
-- [Github](https://github.com/Ryan-zyy)
+- [Github](https://github.com/RyanProMax)
 
 - [语雀](https://www.yuque.com/ryan.zhang)：学习笔记 📝
 
-- [Interest](https://ryan-zyy.github.io/interest/)：记录每一个有趣的应用示例 💪
+- [Interest](https://RyanProMax.github.io/interest/)：记录每一个有趣的应用示例 💪
