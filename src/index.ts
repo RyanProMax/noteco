@@ -12,5 +12,6 @@ export { default as FPS } from './FPS';
 export { default as Input } from './Input';
 export { default as Pagination } from './Pagination';
 export { default as SelectFile } from './SelectFile';
+export { default as SliceUpload } from './SliceUpload';
 export { FixedSizeList, VariableSizeList } from './VirtualList';
 export { default as Watermark } from './Watermark';
